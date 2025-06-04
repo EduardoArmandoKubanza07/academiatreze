@@ -167,7 +167,7 @@ export default function TCCValidationForm() {
 									required
 									value={formData.email}
 									onChange={handleChange}
-									className='mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-2 border'
+									className='outline-none mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-purple-500 focus:ring-purple-500 p-2 border'
 								/>
 							</div>
 							<div>
@@ -184,7 +184,7 @@ export default function TCCValidationForm() {
 									required
 									value={formData.whatsapp}
 									onChange={handleChange}
-									className='mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-2 border'
+									className='outline-none mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-purple-500 focus:ring-purple-500 p-2 border'
 								/>
 							</div>
 							<div>
@@ -201,7 +201,7 @@ export default function TCCValidationForm() {
 									required
 									value={formData.municipio}
 									onChange={handleChange}
-									className='mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-2 border'
+									className='outline-none mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-purple-500 focus:ring-purple-500 p-2 border'
 								/>
 							</div>
 						</div>
@@ -218,7 +218,7 @@ export default function TCCValidationForm() {
 								name='genero'
 								value={formData.genero}
 								onChange={handleChange}
-								className='mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-2 border'
+								className='outline-none mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-purple-500 focus:ring-purple-500 p-2 border'
 							>
 								<option value=''>Selecione...</option>
 								<option value='feminino'>Feminino</option>
@@ -248,7 +248,7 @@ export default function TCCValidationForm() {
 									required
 									value={formData.instituicao}
 									onChange={handleChange}
-									className='mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-2 border'
+									className='outline-none mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-purple-500 focus:ring-purple-500 p-2 border'
 								/>
 							</div>
 							<div>
@@ -265,7 +265,7 @@ export default function TCCValidationForm() {
 									required
 									value={formData.curso}
 									onChange={handleChange}
-									className='mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-2 border'
+									className='outline-none mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-purple-500 focus:ring-purple-500 p-2 border'
 								/>
 							</div>
 						</div>
@@ -284,7 +284,7 @@ export default function TCCValidationForm() {
 											value={opcao}
 											checked={formData.temaEscolhido === opcao}
 											onChange={handleChange}
-											className='h-4 w-4 text-blue-600 focus:ring-blue-500'
+											className='h-4 w-4 text-purple-600 focus:ring-purple-500'
 										/>
 										<label
 											htmlFor={`temaEscolhido-${opcao}`}
@@ -312,7 +312,7 @@ export default function TCCValidationForm() {
 									required
 									value={formData.tema}
 									onChange={handleChange}
-									className='mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-2 border'
+									className='mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-purple-500 focus:ring-purple-500 p-2 border'
 								/>
 							</div>
 						)}
@@ -331,7 +331,7 @@ export default function TCCValidationForm() {
 											value={opcao}
 											checked={formData.temOrientador === opcao}
 											onChange={handleChange}
-											className='h-4 w-4 text-blue-600 focus:ring-blue-500'
+											className='h-4 w-4 text-purple-600 focus:ring-purple-500'
 										/>
 										<label
 											htmlFor={`temOrientador-${opcao}`}
@@ -371,7 +371,7 @@ export default function TCCValidationForm() {
 											value={item}
 											checked={formData.dificuldades.includes(item)}
 											onChange={handleCheckboxChange}
-											className='h-4 w-4 text-blue-600 focus:ring-blue-500'
+											className='h-4 w-4 text-purple-600 focus:ring-purple-500'
 										/>
 										<label
 											htmlFor={`dificuldade-${item}`}
@@ -395,7 +395,7 @@ export default function TCCValidationForm() {
 									name='outraDificuldade'
 									value={formData.outraDificuldade}
 									onChange={handleChange}
-									className='mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-2 border'
+									className='mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-purple-500 focus:ring-purple-500 p-2 border'
 								/>
 							</div>
 						</div>
@@ -421,7 +421,7 @@ export default function TCCValidationForm() {
 											value={item}
 											checked={formData.tecnologias.includes(item)}
 											onChange={handleCheckboxChange}
-											className='h-4 w-4 text-blue-600 focus:ring-blue-500'
+											className='h-4 w-4 text-purple-600 focus:ring-purple-500'
 										/>
 										<label
 											htmlFor={`tecnologia-${item}`}
@@ -445,7 +445,7 @@ export default function TCCValidationForm() {
 									name='outraTecnologia'
 									value={formData.outraTecnologia}
 									onChange={handleChange}
-									className='mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-2 border'
+									className='mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-purple-500 focus:ring-purple-500 p-2 border'
 								/>
 							</div>
 						</div>
@@ -472,7 +472,7 @@ export default function TCCValidationForm() {
 												value={opcao}
 												checked={formData.interesseCursos === opcao}
 												onChange={handleChange}
-												className='h-4 w-4 text-blue-600 focus:ring-blue-500'
+												className='h-4 w-4 text-purple-600 focus:ring-purple-500'
 											/>
 											<label
 												htmlFor={`interesseCursos-${opcao}`}
@@ -499,7 +499,7 @@ export default function TCCValidationForm() {
 												value={opcao}
 												checked={formData.interesseMentor === opcao}
 												onChange={handleChange}
-												className='h-4 w-4 text-blue-600 focus:ring-blue-500'
+												className='h-4 w-4 text-purple-600 focus:ring-purple-500'
 											/>
 											<label
 												htmlFor={`interesseMentor-${opcao}`}
@@ -527,7 +527,7 @@ export default function TCCValidationForm() {
 												value={opcao}
 												checked={formData.interesseEstagio === opcao}
 												onChange={handleChange}
-												className='h-4 w-4 text-blue-600 focus:ring-blue-500'
+												className='h-4 w-4 text-purple-600 focus:ring-purple-500'
 											/>
 											<label
 												htmlFor={`interesseEstagio-${opcao}`}
@@ -555,7 +555,7 @@ export default function TCCValidationForm() {
 													value={opcao}
 													checked={formData.horasDedicacao === opcao}
 													onChange={handleChange}
-													className='h-4 w-4 text-blue-600 focus:ring-blue-500'
+													className='h-4 w-4 text-purple-600 focus:ring-purple-500'
 												/>
 												<label
 													htmlFor={`horasDedicacao-${opcao}`}
