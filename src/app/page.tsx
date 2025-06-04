@@ -1,103 +1,117 @@
-import Image from "next/image";
+import { WrapperContent } from '@/components/wrapperContent';
+import Link from 'next/link';
+import { student } from '@/images';
+import Image from 'next/image';
+
+const services = [
+	{
+		title: 'Mentoria Personalizada',
+		description: 'Acesso a orientadores especializados no seu tema.',
+		icon: '🧑‍🏫',
+	},
+	{
+		title: 'Cursos Intensivos',
+		description: 'Formações em programação, redes e metodologia.',
+		icon: '📚',
+	},
+	{
+		title: 'Comunidade Activa',
+		description: 'Rede de alunos e ex-alunos para colaboração.',
+		icon: '👥',
+	},
+];
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+	return (
+		<div className='min-h-screen flex flex-col'>
+			<section className='bg-gradient-to-r from-purple-800 to-purple-600 text-white py-20'>
+				<WrapperContent>
+					<div className='text-center md:text-left md:flex items-center justify-between'>
+						<div className='md:w-1/2 space-y-6'>
+							<h1 className='text-2xl sm:text-3xl md:text-5xl font-bold leading-tight'>
+								Transforme seu TCC em um projecto de sucesso!
+							</h1>
+							<p className='text-xl text-blue-100'>
+								A Academia 13 te ajuda desde a escolha do tema até a
+								apresentação final.
+							</p>
+							<Link
+								href='/formulario'
+								className='inline-block bg-white text-purple-600 font-bold px-8 py-3 rounded-lg hover:bg-blue-100 transition shadow-lg'
+							>
+								Quero Participar
+							</Link>
+						</div>
+						<div className='hidden md:block'>
+							<Image
+								src={student}
+								alt='Student Academia 13'
+								width={400}
+								height={500}
+							/>
+						</div>
+					</div>
+				</WrapperContent>
+			</section>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+			<section id='features' className='py-16 bg-white'>
+				<WrapperContent>
+					<h2 className='text-2xl font-bold text-center text-purple-600 mb-8'>
+						Como a Academia 13 te ajuda?
+					</h2>
+					<div className='grid grid-cols-1 md:grid-cols-3 gap-8'>
+						{services.map((feature, index) => (
+							<div
+								key={index}
+								className='bg-blue-50 p-6 rounded-lg text-center shadow-sm hover:shadow-md transition'
+							>
+								<span className='text-4xl'>{feature.icon}</span>
+								<h3 className='text-xl font-bold mt-4 text-purple-600'>
+									{feature.title}
+								</h3>
+								<p className='mt-2 text-gray-600'>{feature.description}</p>
+							</div>
+						))}
+					</div>
+				</WrapperContent>
+			</section>
+
+			<section className='bg-blue-50 py-12'>
+				<WrapperContent>
+					<div className='text-center'>
+						<h2 className='text-2xl font-bold text-purple-600'>
+							Pronto para levar seu TCC ao próximo nível?
+						</h2>
+						<Link
+							href='/formulario'
+							className='mt-6 inline-block text-white bg-purple-600 rounded-md shadow-md py-3 px-6 hover:bg-purple-700 transition-colors cursor-pointer'
+						>
+							Acessar Formulário
+						</Link>
+					</div>
+				</WrapperContent>
+			</section>
+
+			{/* Footer Simples */}
+			<footer className='bg-purple-600 text-white py-2'>
+				<WrapperContent>
+					<div className='text-center flex items-center justify-center flex-wrap gap-4'>
+						<p>
+							© {new Date().getFullYear()} Academia 13. Todos os direitos
+							reservados.
+						</p>
+						<p className='mt-1 flex items-center gap-1'>
+							Contacto:
+							<a
+								href='mailto:edukubanza17@gmail.com'
+								className='text-white hover:underline'
+							>
+								edukubanza17@gmail.com
+							</a>
+						</p>
+					</div>
+				</WrapperContent>
+			</footer>
+		</div>
+	);
 }
