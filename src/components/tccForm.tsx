@@ -84,7 +84,8 @@ export default function TCCValidationForm() {
 
 	const handleSubmit = async (e: React.FormEvent) => {
 		e.preventDefault();
-		// Exemplo: Envio para uma API Route do Next.js
+
+		console.log(formData);
 		const response = await fetch('/api/submit-form', {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/json' },

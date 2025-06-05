@@ -9,8 +9,8 @@ export default function WhatsAppFloatButton() {
 				rel='noopener noreferrer'
 				className='
           flex items-center justify-center
-          w-16 h-16 rounded-full
-          bg-[#25D366] hover:bg-[#128c26] 
+          w-14 h-14 rounded-full
+          bg-[#25D366] hover:bg-[#128c18] 
           text-white
           shadow-lg hover:shadow-xl
           transition-all duration-300
