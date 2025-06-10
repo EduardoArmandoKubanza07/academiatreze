@@ -18,7 +18,7 @@ type FormData = {
 	classe: string; // Pré-selecionado como "13ª classe"
 	temaEscolhido: 'sim' | 'nao' | '';
 	tema?: string;
-	temOrientador: 'sim' | 'nao';
+	temOrientador: 'sim' | 'nao' | '';
 
 	// 3. Desafios e Necessidades
 	dificuldades: string[];
@@ -27,9 +27,9 @@ type FormData = {
 	outraTecnologia?: string;
 
 	// 4. Interesse e Comprometimento
-	interesseCursos: 'sim' | 'nao';
-	interesseMentor: 'sim' | 'nao';
-	interesseEstagio: 'sim' | 'nao';
+	interesseCursos: 'sim' | 'nao' | '';
+	interesseMentor: 'sim' | 'nao' | '';
+	interesseEstagio: 'sim' | 'nao' | '';
 	horasDedicacao: string;
 
 	// 5. Feedback Livre
@@ -51,14 +51,14 @@ export default function TCCValidationForm() {
 		classe: '13ª classe',
 		temaEscolhido: '',
 		tema: '',
-		temOrientador: 'nao',
+		temOrientador: '',
 		dificuldades: [],
 		tecnologias: [],
 		outraDificuldade: '',
 		outraTecnologia: '',
-		interesseCursos: 'nao',
-		interesseMentor: 'nao',
-		interesseEstagio: 'nao',
+		interesseCursos: '',
+		interesseMentor: '',
+		interesseEstagio: '',
 		horasDedicacao: '',
 		expectativas: '',
 		sugestoes: '',
@@ -113,14 +113,14 @@ export default function TCCValidationForm() {
 					classe: '13ª classe',
 					temaEscolhido: '',
 					tema: '',
-					temOrientador: 'nao',
+					temOrientador: '',
 					dificuldades: [],
 					tecnologias: [],
 					outraDificuldade: '',
 					outraTecnologia: '',
-					interesseCursos: 'nao',
-					interesseMentor: 'nao',
-					interesseEstagio: 'nao',
+					interesseCursos: '',
+					interesseMentor: '',
+					interesseEstagio: '',
 					horasDedicacao: '',
 					expectativas: '',
 					sugestoes: '',
