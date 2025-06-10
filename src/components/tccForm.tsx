@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
 import { WrapperContent } from './wrapperContent';
+import { toast } from 'sonner';
 
 type FormData = {
 	// 1. Informações Pessoais
@@ -15,7 +16,7 @@ type FormData = {
 	instituicao: string;
 	curso: string;
 	classe: string; // Pré-selecionado como "13ª classe"
-	temaEscolhido: 'sim' | 'nao';
+	temaEscolhido: 'sim' | 'nao' | '';
 	tema?: string;
 	temOrientador: 'sim' | 'nao';
 
@@ -37,6 +38,7 @@ type FormData = {
 };
 
 export default function TCCValidationForm() {
+	const [isLOading, setIsLoading] = useState(false);
 	const [formData, setFormData] = useState<FormData>({
 		nome: '',
 		idade: '',
@@ -47,7 +49,7 @@ export default function TCCValidationForm() {
 		instituicao: '',
 		curso: '',
 		classe: '13ª classe',
-		temaEscolhido: 'nao',
+		temaEscolhido: '',
 		tema: '',
 		temOrientador: 'nao',
 		dificuldades: [],
@@ -85,13 +87,53 @@ export default function TCCValidationForm() {
 	const handleSubmit = async (e: React.FormEvent) => {
 		e.preventDefault();
 
-		console.log(formData);
-		const response = await fetch('/api/submit-form', {
-			method: 'POST',
-			headers: { 'Content-Type': 'application/json' },
-			body: JSON.stringify(formData),
-		});
-		if (response.ok) alert('Obrigado por contribuir para a Academia 13!');
+		try {
+			setIsLoading(true);
+			const response = await fetch(
+				`${process.env.NEXT_PUBLIC_API_URL}/api/submit-form`,
+				{
+					method: 'POST',
+					headers: { 'Content-Type': 'application/json' },
+					body: JSON.stringify(formData),
+				}
+			);
+
+			if (response.ok) {
+				toast.success('Obrigado por contribuir para a Academia 13! 🎉');
+				setFormData({
+					// Limpa o formulário
+					nome: '',
+					idade: '',
+					email: '',
+					whatsapp: '',
+					municipio: '',
+					genero: '',
+					instituicao: '',
+					curso: '',
+					classe: '13ª classe',
+					temaEscolhido: '',
+					tema: '',
+					temOrientador: 'nao',
+					dificuldades: [],
+					tecnologias: [],
+					outraDificuldade: '',
+					outraTecnologia: '',
+					interesseCursos: 'nao',
+					interesseMentor: 'nao',
+					interesseEstagio: 'nao',
+					horasDedicacao: '',
+					expectativas: '',
+					sugestoes: '',
+				});
+			} else {
+				toast.error('Erro ao enviar. Tente novamente!');
+			}
+		} catch (error) {
+			toast.error('Ocorreu um erro inesperado.');
+			console.error(error);
+		} finally {
+			setIsLoading(false);
+		}
 	};
 
 	return (
@@ -614,10 +656,11 @@ export default function TCCValidationForm() {
 
 					<div className='flex justify-end'>
 						<button
+							disabled={isLOading}
 							type='submit'
-							className='bg-purple-600 hover:bg-purple-800 text-white font-bold py-3 px-6 rounded-md transition duration-200 shadow-lg'
+							className='disabled:cursor-not-allowed disabled:opacity-50 bg-purple-600 hover:bg-purple-800 text-white cursor-pointer font-bold py-3 px-6 rounded-md transition duration-200 shadow-lg'
 						>
-							Enviar Formulário
+							{isLOading ? 'Enviando...' : 'Enviar Formulário'}
 						</button>
 					</div>
 				</form>

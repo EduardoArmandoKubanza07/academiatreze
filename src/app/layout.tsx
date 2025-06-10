@@ -2,6 +2,7 @@ import './globals.css';
 import type { Metadata } from 'next';
 import Header from '@/components/header';
 import WhatsAppButton from '@/components/whatsAppButton';
+import { ToasterProvider } from '@/providers/sonner';
 
 export const metadata: Metadata = {
 	title: 'Academia 13 - Transforme seu TCC',
@@ -17,6 +18,7 @@ export default function RootLayout({
 	return (
 		<html lang='pt'>
 			<body className={`antialiased scroll-smooth`}>
+				<ToasterProvider />
 				<Header />
 				<main className='mt-32 md:mt-28'>{children}</main>
 
